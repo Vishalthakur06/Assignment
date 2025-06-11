@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "ed412637-4d28-4f85-b61a-3de4301ebafb",
+		"name": "Product Code Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35046259"
+	},
+	"item": [
+		{
+			"name": "AdminLogin",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\"password\":\"admin123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login \\",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login ",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQ4ZjdmODdiMGQzNTc5ODI5OWJlODkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDk2MTMyMzUsImV4cCI6MTc0OTY5OTYzNX0.x4NKCVDJGdDQHTfdMrSJhi7k6fk760lK1pml-iiBDoE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Paracetamol",
+							"type": "text"
+						},
+						{
+							"key": "batchSize",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "mrp",
+							"value": "25.99",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/ASUS/Downloads/paracetamol.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/admin/products?name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"products"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate_UniqueCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQ4ZjdmODdiMGQzNTc5ODI5OWJlODkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDk2MTMyMzUsImV4cCI6MTc0OTY5OTYzNX0.x4NKCVDJGdDQHTfdMrSJhi7k6fk760lK1pml-iiBDoE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productId\":\"6848fbbaf5ed4f6017dd9e55\", \"batchNumber\":\"BATCH2024-001\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/admin/generate-codes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"generate-codes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProduct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQ4ZjdmODdiMGQzNTc5ODI5OWJlODkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDk2MTMyMzUsImV4cCI6MTc0OTY5OTYzNX0.x4NKCVDJGdDQHTfdMrSJhi7k6fk760lK1pml-iiBDoE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/admin/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"user\",\"password\":\"user123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByUniqueCode",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQ4ZjdmODdiMGQzNTc5ODI5OWJlOGIiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0OTYxNDE5NCwiZXhwIjoxNzQ5NzAwNTk0fQ.GIUgOlFFATJpu_iTtfuye8mKQON7QwgAnT3yxGN9Blk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/user/search/cb97492d-07f1-44c8-be4d-dddcb946b9b7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"search",
+						"cb97492d-07f1-44c8-be4d-dddcb946b9b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminLogout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQ4ZjdmODdiMGQzNTc5ODI5OWJlODkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDk2MTU2NzIsImV4cCI6MTc0OTcwMjA3Mn0.oWLZBeLkeiC0I3oqnGOcN1aQs6FfgmPBGJwL16HHdEs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
