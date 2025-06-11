@@ -9,7 +9,7 @@
 1. Clone the repository
 2. Run `npm install`
 3. Create `.env` file
-4. add mongodb_url in db.js and Run MongoDB server
+4. Add mongodb_url in db.js and Run MongoDB server
 5. Run `npm run setup` to create initial users
 6. Run `npm start` to start the server
 
